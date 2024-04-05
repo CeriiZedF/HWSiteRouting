@@ -1,0 +1,25 @@
+
+  <div id="app">
+      @for (entity of petsData; track $index)
+      {
+        <div class="animal">
+          <img class="pet-photo" [src]="entity.photo" alt="Not Found Image">
+          <h2 class="pet-name">{{entity.name}} <span class="species">{{entity.species}}</span> </h2>
+          @if((date - entity.birthYear) > 0)
+          {
+            <p><strong>Age:{{(date - entity.birthYear)}} Year</strong></p>
+          }
+          @else{
+            <p><strong>Age:12 Month</strong></p>
+          }
+          @if(entity.favFoods?.length != undefined)
+          {
+            <ul class="foods-list">
+            @for (foods of entity.favFoods; track $index) {
+              <li [innerHTML]="foods"></li>
+            }
+            </ul>
+          }
+        </div>
+        }
+  </div>

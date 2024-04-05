@@ -1,0 +1,13 @@
+ul{
+    list-style: none;
+    display: inline;
+}
+
+li{
+    display: inline;
+    margin-right: 20px;
+}
+
+.active{
+    color: green;
+}
